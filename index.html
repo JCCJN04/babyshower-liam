@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Baby Shower de Liam — Mariana & Sebastián</title>
+  
+  <!-- Google Fonts for Modern Boho Style (Cormorant Garamond + Montserrat + Pinyon Script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+            cursive: ['Pinyon Script', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --paper: #FAF6EE;
+      --ink: #5C4338;
+      --terracotta: #A6643C;
+      --terracotta-light: #EADA93;
+      --olive: #737856;
+      --sand: #DBC8B1;
+    }
+
+    html, body {
+      background-color: var(--paper);
+      color: var(--ink);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: clamp(15px, 3.5vw, 17px);
+      font-weight: 400;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Natural paper grain texture */
+    .grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.015;
+      background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+      mix-blend-mode: multiply;
+    }
+
+    /* Asymmetric floating organic blobs */
+    .boho-blob-1 {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 320px;
+      height: 320px;
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      background-color: #EADBC8;
+      opacity: 0.25;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .boho-blob-2 {
+      position: absolute;
+      bottom: 20%;
+      left: -150px;
+      width: 380px;
+      height: 380px;
+      border-radius: 60% 40% 50% 50% / 30% 60% 40% 70%;
+      background-color: #DFCDBA;
+      opacity: 0.2;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Organic separators */
+    .boho-divider {
+      width: 48px;
+      height: 2px;
+      background-color: var(--terracotta);
+      opacity: 0.3;
+      margin: 2.5rem auto;
+      border-radius: 99px;
+    }
+
+    /* Scroll reveal transitions */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Map container style */
+    .map-container {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 20px;
+      filter: sepia(0.1) grayscale(0.2) contrast(1.02);
+      transition: filter 0.4s ease;
+    }
+    .map-container:hover {
+      filter: grayscale(0) contrast(1);
+    }
+
+
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Background grain and organic shapes -->
+  <div class="grain-overlay"></div>
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="boho-blob-1"></div>
+    <div class="boho-blob-2"></div>
+  </div>
+
+
+
+  <!-- Centered Modern Container -->
+  <div class="max-w-[550px] mx-auto px-8 py-20 text-center relative z-10 space-y-14">
+    
+    <!-- Hero / Header Section -->
+    <header class="reveal space-y-4">
+      <span class="font-body text-[10px] font-semibold tracking-[0.25em] text-[#A6643C] uppercase">Baby Shower</span>
+      <h1 class="font-display text-5xl md:text-6xl font-normal text-[#5C4338] leading-[1.1] mt-3">
+        La llegada de<br>
+        <span class="font-cursive text-6xl md:text-7xl text-[#A6643C] normal-case block mt-2">Liam</span>
+      </h1>
+      
+      <p class="font-body text-[9px] font-semibold tracking-[0.25em] text-[#737856] uppercase mt-8 mb-1">Futuros Papás</p>
+      <p class="font-display text-2xl font-light italic text-[#5C4338] mt-1">Mariana & Sebastián</p>
+    </header>
+
+    <!-- Illustration Frame -->
+    <div class="reveal flex flex-col items-center justify-center py-4">
+      <div class="relative w-48 h-48 mx-auto">
+        <div class="absolute inset-[-6px] rounded-[32px] border border-[#A6643C]/20 pointer-events-none"></div>
+        <img class="w-full h-full object-cover rounded-[32px] border border-[#DBC8B1] shadow-sm filter contrast-[1.02]" 
+             src="maternidad.png" 
+             alt="Detalle Baby Shower Liam" />
+      </div>
+    </div>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- Date Section -->
+    <section class="reveal space-y-2">
+      <p class="font-display text-4xl font-normal tracking-wide text-[#5C4338]">14 . Noviembre</p>
+      <p class="font-body text-xs tracking-[0.2em] text-[#737856] uppercase">Sábado &middot; 4:00 PM &middot; 2026</p>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="reveal py-2">
+      <div class="flex justify-center items-center gap-6">
+        <div class="flex flex-col items-center">
+          <span id="cd-days" class="font-display text-3xl font-light text-[#A6643C]">--</span>
+          <span class="font-body text-[9px] uppercase tracking-[0.2em] text-[#737856] mt-1 font-medium">Días</span>
+        </div>
+        <span class="font-display text-xl text-[#DBC8B1]">&middot;</span>
+        <div class="flex flex-col items-center">
+          <span id="cd-hours" class="font-display text-3xl font-light text-[#A6643C]">--</span>
+          <span class="font-body text-[9px] uppercase tracking-[0.2em] text-[#737856] mt-1 font-medium">Horas</span>
+        </div>
+        <span class="font-display text-xl text-[#DBC8B1]">&middot;</span>
+        <div class="flex flex-col items-center">
+          <span id="cd-mins" class="font-display text-3xl font-light text-[#A6643C]">--</span>
+          <span class="font-body text-[9px] uppercase tracking-[0.2em] text-[#737856] mt-1 font-medium">Minutos</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- Message -->
+    <section class="reveal max-w-[90%] mx-auto space-y-4">
+      <p class="text-[17px] leading-relaxed font-normal text-[#5C4338]/85">
+        Hay un nuevo amor que está por llegar y queremos celebrar su dulce bienvenida. Te esperamos con emoción en este día especial.
+      </p>
+    </section>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- Location Details with Maps Embed -->
+    <section class="reveal space-y-6">
+      <p class="font-body text-[10px] font-semibold tracking-[0.25em] uppercase text-[#737856]">Ubicación</p>
+      <h3 class="font-display text-3xl font-semibold text-[#5C4338]">Jardín Las Palmas</h3>
+      <p class="text-sm text-[#5C4338]/80 max-w-[85%] mx-auto leading-relaxed">
+        Av. Las Bugambilias 1234, Col. Del Valle,<br>San Pedro Garza García, N.L.
+      </p>
+      
+      <!-- Embedded Google Map -->
+      <div class="pt-4 max-w-[90%] mx-auto">
+        <iframe class="map-container"
+                src="https://maps.google.com/maps?q=Av.+Las+Bugambilias+1234,+Col.+Del+Valle,+San+Pedro+Garza+Garcia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+      <div class="pt-2">
+        <a href="https://maps.google.com" target="_blank" class="inline-block font-body text-[10px] font-semibold tracking-widest uppercase text-[#A6643C] border-b border-[#A6643C]/30 pb-0.5 hover:border-[#A6643C] transition-colors">
+          Ver Ubicación GPS
+        </a>
+      </div>
+    </section>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- Dress Code Section -->
+    <section class="reveal space-y-4">
+      <h3 class="font-display text-2xl font-semibold text-[#5C4338]">Dress Code</h3>
+      <p class="text-sm text-[#5C4338]/80 max-w-[85%] mx-auto leading-relaxed mb-6">
+        Semi-Formal &middot; Agradecemos tu asistencia vistiendo en tonos beige, terracota u oliva.
+      </p>
+      
+      <!-- Palette Swatches -->
+      <div class="flex justify-center items-center gap-5 mt-6">
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-10 h-10 rounded-full border border-sand/40" style="background-color: #EFE4D6;"></div>
+          <span class="font-body text-[8px] uppercase tracking-widest font-semibold text-[#737856]">Beige</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-10 h-10 rounded-full border border-sand/40" style="background-color: #A6643C;"></div>
+          <span class="font-body text-[8px] uppercase tracking-widest font-semibold text-[#737856]">Terracota</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-10 h-10 rounded-full border border-sand/40" style="background-color: #8C9469;"></div>
+          <span class="font-body text-[8px] uppercase tracking-widest font-semibold text-[#737856]">Oliva</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-10 h-10 rounded-full border border-sand/40" style="background-color: #DBCDBA;"></div>
+          <span class="font-body text-[8px] uppercase tracking-widest font-semibold text-[#737856]">Arena</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- Gift Registry Details -->
+    <section class="reveal space-y-8">
+      <p class="font-body text-[10px] font-semibold tracking-[0.25em] uppercase text-[#737856]">Mesa de Regalos</p>
+      
+      <div class="space-y-4 max-w-[80%] mx-auto text-left">
+        <!-- Liverpool -->
+        <div class="flex justify-between items-center py-2 border-b border-sand/30">
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-auto" viewBox="0 0 100 24" fill="currentColor">
+              <text x="0" y="18" font-family="'Cormorant Garamond', serif" font-weight="600" font-style="italic" font-size="20" fill="#E6007E">Liverpool</text>
+            </svg>
+            <span class="text-xs text-[#737856] font-sans font-medium">(N° 508492)</span>
+          </div>
+          <a href="https://www.liverpool.com.mx" target="_blank" class="font-body text-[10px] font-semibold tracking-wider uppercase text-[#A6643C] hover:underline">Mesa</a>
+        </div>
+        <!-- Amazon -->
+        <div class="flex justify-between items-center py-2 border-b border-sand/30">
+          <div class="flex items-center gap-3">
+            <svg class="h-5 w-auto" viewBox="0 0 80 20" fill="currentColor">
+              <text x="0" y="14" font-family="'Montserrat', sans-serif" font-weight="800" font-size="14" fill="#232F3E">amazon</text>
+              <path d="M12 18c6 0 11-1.8 14-4.5.3-.3.5 0 .4.2-1.2 1.8-3.5 3.2-6.2 4-3.3 1-7.3 1.3-11 1.3-4.3 0-8.6-.7-12-2.2-.3-.1-.1-.5.2-.3 3.3 1.5 7.3 2.2 11.3 2.2" fill="#FF9900"/>
+            </svg>
+            <span class="text-xs text-[#737856] font-sans font-medium">(Baby Shower Liam)</span>
+          </div>
+          <a href="https://www.amazon.com.mx" target="_blank" class="font-body text-[10px] font-semibold tracking-wider uppercase text-[#A6643C] hover:underline">Mesa</a>
+        </div>
+      </div>
+ 
+       <!-- Envelope / CLABE details -->
+      <div class="pt-6 max-w-[85%] mx-auto space-y-3">
+        <h4 class="font-display text-xl font-semibold">Lluvia de Sobres</h4>
+        <p class="text-xs text-[#5C4338]/85 leading-relaxed">
+          Si deseas hacernos un regalo en efectivo, ponemos a tu disposición los siguientes datos de transferencia:
+        </p>
+        <div class="pt-2">
+          <p class="font-body text-[8px] uppercase tracking-widest font-bold text-[#737856]">CLABE Bancaria (Banorte)</p>
+          <div class="mt-1">
+            <span class="font-body text-xs font-semibold tracking-widest">012 345 6789 0123 4567</span>
+          </div>
+          <p class="text-xs text-[#737856] mt-1 font-light italic">Titular: Mariana Rodríguez</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="boho-divider reveal"></div>
+
+    <!-- RSVP section -->
+    <section class="reveal space-y-6 pb-12">
+      <h3 class="font-display text-2xl font-semibold uppercase">Confirmación</h3>
+      <p class="text-sm text-[#5C4338]/80 max-w-[80%] mx-auto leading-relaxed">
+        Agradecemos que nos confirmes tu asistencia a continuación.
+      </p>
+      
+      <!-- Tally Embed (Dynamic Height) -->
+      <div class="pt-4 w-full">
+        <!-- Reemplaza 2EoaML con tu propio Form ID de Tally -->
+        <iframe data-tally-src="https://tally.so/embed/2EoaML?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                loading="lazy" 
+                width="100%" 
+                height="276" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="Confirmación de Asistencia"
+                class="w-full rounded-2xl border border-sand/30 bg-white/20 backdrop-blur-sm p-4"></iframe>
+        <script>
+          var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}
+        </script>
+      </div>
+    </section>
+
+    <!-- Footer details -->
+    <footer class="reveal pt-10 text-center">
+      <div class="boho-divider"></div>
+      <p class="font-body text-[9px] tracking-[0.25em] uppercase text-[#737856] mt-6">Mariana & Sebastián &middot; 2026</p>
+    </footer>
+
+  </div>
+
+  <!-- Verification scripts & helpers -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll Reveal Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.05 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Countdown Timer Logic
+      const targetDate = new Date('2026-11-14T16:00:00').getTime();
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minsEl = document.getElementById('cd-mins');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          daysEl.innerText = '00';
+          hoursEl.innerText = '00';
+          minsEl.innerText = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        daysEl.innerText = days.toString().padStart(2, '0');
+        hoursEl.innerText = hours.toString().padStart(2, '0');
+        minsEl.innerText = minutes.toString().padStart(2, '0');
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 60000); // Update every minute to preserve resource/battery
+    });
+
+
+  </script>
+</body>
+</html>
