@@ -3,7 +3,11 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/",
+      "source": "/babyshower-liam/:path*",
+      "destination": "/:path*"
+    },
+    {
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
